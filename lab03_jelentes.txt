@@ -1,0 +1,35 @@
+1. feladat: fork() kimenet
+A teszteles soran a programban a szulo es a gyerek folyamat uzenetei nem mindig ugyanabban a sorrendben jelennek meg. Az ID-k valtakoznak minden futtatas utan
+
+2. feladat: Zombi folyamatok
+A teszteles soran eszrevettem, hogy wait() nelkul a gyerek folyamat befejezese utan, zombie allapotba kerul a 'ps' parancs szerint, mert a szulo nem vette at a kilepesi kodot. wait() hasznalataval a zombi allapot azonnal megszunik
+
+3. feladat: Race Condition
+A teszteles soran (kb. 5-7 futtatas utan) az eredmeny pontosan 200000 lett, igy for ciklust hasznaltam a futtatasra (for i in {1..10}; do ./shared_mem; done). Ezutan a 3. (185871) es a 8-diknal (196990) allt fenn a race condition. A szalak felulirjak egymas eredmenyeit es a vegosszeg elmarad a varttol
+
+4. feladat: Szemafor
+A teszteles soran eszrevettem, hogy a folyamat sokkal gyorsabban vegrehajtodik, es for ciklussal se all fenn race condition. A szemafor olyan, mintha a folyamatot kulon szalon futtatnank, azaz nem gabalyodik ossze a counter
+
+Hazi: Ping Pong
+A teszteles soran a ket szemaforral (1 es 0) megvalositott szinkronizacio tokeletesen mukodik. A folyamatok sorrendben adjak at egymasnak a vezerlest
+
+PING
+PONG
+PING
+PONG
+PING
+PONG
+PING
+PONG
+PING
+PONG
+PING
+PONG
+PING
+PONG
+PING
+PONG
+PING
+PONG
+PING
+PONG
